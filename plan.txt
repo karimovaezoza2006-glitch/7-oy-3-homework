@@ -1,0 +1,107 @@
+TypeScript asoslari
+TypeScript — bu Microsoft tomonidan ishlab chiqilgan, JavaScript asosiga qurilgan zamonaviy dasturlash tili bo‘lib, u JavaScript imkoniyatlarini kengaytirish va dasturiy ta’minot sifatini oshirish maqsadida yaratilgan. TypeScript’ning asosiy g‘oyasi — dastur yozish jarayonidayoq xatolarni aniqlash, kodni aniq, tushunarli va boshqarilishi oson holga keltirishdir. U JavaScript’ning to‘liq kengaytmasi (superset) hisoblanadi, ya’ni har qanday JavaScript kodi TypeScript’da ham to‘g‘ri ishlaydi, lekin TypeScript JavaScript’da mavjud bo‘lmagan qo‘shimcha sintaksis va imkoniyatlarga ega.
+TypeScript’ning eng muhim jihati — unda ma’lumot turlarining qat’iy belgilanishidir. JavaScript’da o‘zgaruvchilar turi dastur ishlashi davomida o‘zgarishi mumkin bo‘lsa, TypeScript’da o‘zgaruvchi, funksiya parametrlari va funksiya qaytaradigan qiymatlarning turi oldindan aniqlanadi. Bu esa xatolarni dastur ishga tushmasidan oldin, ya’ni kompilyatsiya vaqtida aniqlash imkonini beradi. Natijada dastur barqarorroq, ishonchliroq va professional ko‘rinishga ega bo‘ladi.
+TypeScript bevosita brauzerda ishlamaydi. Avval TypeScript kompilyatori yordamida oddiy JavaScript’ga aylantiriladi, so‘ngra hosil bo‘lgan JavaScript kodi brauzer yoki server muhitida bajariladi. Shu sababli TypeScript’da yozilgan dasturlar barcha zamonaviy brauzerlarda va JavaScript ishlaydigan har qanday platformada muammosiz ishlaydi. Bu xususiyat TypeScript’ni universal va amaliy tilga aylantiradi.
+TypeScript’da oddiy ma’lumot turlari, masalan number, string va boolean bilan bir qatorda, murakkab va kengaytirilgan typelar ham mavjud. Array, object, tuple va enum kabi typelar ma’lumotlarni tartibli saqlash va ulardan to‘g‘ri foydalanishga yordam beradi. Shuningdek, any, unknown, void va never kabi maxsus typelar dastur mantiqini yanada aniq ifodalash uchun ishlatiladi. Kengaytirilgan union, intersection, generic va literal typelar esa katta loyihalarda kodni moslashuvchan, qayta ishlatish mumkin bo‘lgan va xavfsiz holga keltiradi. Aynan mana shu imkoniyatlar TypeScript’ni oddiy JavaScript’dan ajratib turadi.
+TypeScript katta loyihalar va jamoaviy ishlarda ayniqsa qulay. Kodni o‘qish va tushunish osonlashadi, chunki har bir o‘zgaruvchi va funksiya nima bilan ishlashi aniq ko‘rsatilgan bo‘ladi. IDE muharrirlarda avtomatik to‘ldirish, maslahatlar va xatolarni real vaqt rejimida ko‘rsatish funksiyalari juda yaxshi ishlaydi. Bu esa dasturchining unumdorligini oshiradi va xatolar sonini kamaytiradi.
+Bugungi kunda TypeScript frontend va backend dasturlashda keng qo‘llaniladi. React, Angular, Vue kabi frontend freymvorklar, Node.js va NestJS kabi backend texnologiyalar TypeScript bilan juda yaxshi moslashgan. Ayniqsa Angular to‘liq TypeScript asosida qurilgani bu tilning qanchalik muhim ekanini ko‘rsatadi. Shuningdek, mobil ilovalar yaratishda ham TypeScript’dan faol foydalaniladi.
+I. Primitive (Oddiy) typelar
+1. number
+Number tipi barcha sonlarni ifodalaydi: butun, kasr, manfiy va musbat sonlar. TypeScript’da alohida integer yoki float typelari mavjud emas, hammasi number tipi ostida ishlaydi. U matematik hisob-kitoblar, o‘lchov birliklari, indekslar va statistik ma’lumotlar bilan ishlashda qo‘llaniladi. Number tipi noto‘g‘ri ma’lumot kiritilishini kompilyatsiya vaqtidayoq aniqlab beradi va kod barqarorligini oshiradi.
+2. string
+String tipi matnli qiymatlar uchun mo‘ljallangan. Foydalanuvchi ma’lumotlari, xabarlar, sarlavhalar, tavsiflar va barcha matnlar string tipida bo‘ladi. TypeScript string metodlarini to‘liq nazorat qiladi va faqat satrlar bilan ishlaydigan funksiyalargagina ruxsat beradi. Bu kodni ancha tushunarli va ishonchli qiladi.
+3. boolean
+Boolean tipi mantiqiy qiymatlarni ifodalaydi: true yoki false. U shartli operatorlar, tekshiruvlar va mantiqiy ifodalarda ishlatiladi. Boolean noto‘g‘ri qiymatlar (masalan, son yoki matn) berilishini qat’iy taqiqlaydi.
+4. bigint
+Bigint juda katta butun sonlar bilan ishlash uchun mo‘ljallangan. Oddiy number tipida aniqlik yo‘qolishi mumkin bo‘lgan holatlarda bigint ishlatiladi. Moliyaviy hisob-kitoblar yoki katta identifikatorlar bilan ishlashda muhim ahamiyatga ega.
+5. symbol
+Symbol noyob va takrorlanmaydigan qiymat yaratish uchun ishlatiladi. Asosan object ichidagi maxfiy yoki to‘qnashuvsiz property’lar yaratishda qo‘llaniladi. Symbol yordamida obyekt tuzilmasi xavfsizroq bo‘ladi.
+II. Structural (Tuzilmaviy) typelar
+6. array
+Array bir xil turdagi elementlardan tashkil topgan ma’lumotlar to‘plamidir. TypeScript’da massiv ichidagi elementlar turi qat’iy belgilanadi. Bu massivlar ustida map, filter, reduce kabi amallarni xavfsiz bajarish imkonini beradi.
+7. tuple
+Tuple — qat’iy tuzilishga ega massiv bo‘lib, unda har bir indeksdagi qiymat turi aniq belgilanadi. Tuple aniq formatdagi ma’lumotlar bilan ishlashda, masalan koordinatalar yoki bir nechta qiymatni qaytarishda ishlatiladi.
+8. object
+Object tipi murakkab ma’lumotlar tuzilmasini ifodalaydi. Unda property’lar, ularning typelari va ixtiyoriy yoki majburiy ekanligi aniqlanadi. Object TypeScript’da real dunyo obyektlarini modellashtirishning asosiy vositasidir.
+III. Maxsus (Special) typelar
+9. any
+Any istalgan qiymatni qabul qiladi va TypeScript’ning type nazoratini o‘chiradi. U tezkor prototiplashda yoki eski JavaScript kodini TypeScript’ga ko‘chirishda ishlatiladi, lekin katta loyihalarda tavsiya etilmaydi.
+10. unknown
+Unknown ham istalgan qiymatni qabul qiladi, ammo undan foydalanishdan oldin tekshiruv talab etadi. Bu uni any’dan ancha xavfsiz qiladi va professional yondashuvda afzalroq hisoblanadi.
+11. void
+Void hech qanday qiymat qaytarmaydigan funksiyalar uchun ishlatiladi. Asosan xizmat funksiyalari, log yozish yoki holatni o‘zgartiruvchi funksiyalarda qo‘llaniladi.
+12. never
+Never hech qachon qiymat qaytarmaydigan holatlarni ifodalaydi. Masalan, doimiy xato tashlaydigan funksiya yoki cheksiz sikl. TypeScript’da unreachable code’ni aniqlashda muhim.
+13. null va undefined
+Null — ataylab bo‘sh qiymat, undefined — qiymat berilmagan holat. Strict mode’da ular alohida typelar sifatida qat’iy tekshiriladi.
+14. function type
+Function type funksiyaning qabul qiladigan parametrlari va qaytish qiymatini aniq belgilaydi. Bu noto‘g‘ri chaqiriqlarni oldini oladi va kodni xavfsiz qiladi.
+ Advanced (Kengaytirilgan) typelar
+15. union type
+Union type o‘zgaruvchiga bir nechta typelardan birini qabul qilish imkonini beradi. Bu moslashuvchanlik va aniq nazoratni birlashtiradi.
+16. intersection type
+Intersection type bir nechta typelarni birlashtirib, ularning barcha xususiyatlarini o‘zida jamlaydi. Murakkab obyektlar yaratishda ishlatiladi.
+17. literal type
+Literal typelar aniq qiymatlarni type sifatida belgilaydi. Ular qat’iy variantlar bilan ishlashda juda foydali.
+18. generic type
+Generic typelar qayta ishlatiladigan, moslashuvchan va type-xavfsiz kod yozish imkonini beradi. Ular TypeScript’ning eng kuchli mexanizmlaridan biridir.
+Type yaratish va boshqarish vositalari
+19. type alias
+Type alias murakkab typelarga nom berish va ularni qayta ishlatish uchun xizmat qiladi. Union, intersection va literal typelar bilan juda qulay ishlaydi.
+20. interface
+Interface object tuzilmasini aniqlash uchun ishlatiladi. U katta jamoaviy loyihalarda kod standartini saqlash va tushunarli qilishda muhim rol o‘ynaydi.
+Qo‘shimcha TypeScript tushunchalari
+21. optional va readonly
+Optional property’lar majburiy bo‘lmagan qiymatlarni ifodalaydi, readonly esa o‘zgartirib bo‘lmaydigan qiymatlarni belgilaydi. Bu obyektlarni xavfsiz qiladi.
+22. type narrowing
+Type narrowing — shartlar orqali type’ni aniqlashtirish jarayoni bo‘lib, union typelar bilan ishlashda muhim ahamiyatga ega.
+Type Assertion
+Type Scriptda typelarni o’zgartirishni bir necha usuli bor. Any va unkown
+ type yordamida. TypeScriptda Type Assertion qiymatning turini aniqlik bilan belgilash va TypeScriptda ko’rsatish uchun ishlatiladi. Bu ayniqsa any  va unknown kabi turlar ishlaganda, TypeScript tomonidan noto’g’ri aniqlanishi yoki DOM elementlariga ishlov berishda foydali hisoblanadi. 
+	Type Assertion yordamida siz TypeScriptga “Bu qiymatning tipi mana bu tur ekanligini men bilaman” deb ma’lumot berasz. Bu runtimeda hech qanday ta’sir ko’rsatmaydi, faqat kodni tahrirlash paytida TypeSscriptga qo’shincha ma’lumot beradi. 
+Type Assertion asoson:
+•	TypeScript qachon turni noto’gri aniqlaganda. 
+•	Obyekt turlariga ishlov berganda
+•	DOM elementlariga murojjat qilishda ishlatiladi. 
+Type Assertion sintaksisi
+Type Assertion yozishning 2 xil usuli bor.
+1.Angle Bracket sintaksisi ko’p ishlatiladi (lekin React bilan muommo to’g’dirishi mumkin.)
+2.as sintaksisi (react bilan mos keladi va eng ko’p ishlatiladi)
+Type Assetion uchun qo’llanilish holatlari
+1.Type Scriptda any va unknown turlari yordamida istalgan turdagi qiymatlar bilan mumkin, ammo bu qiymatlarning turlari haqida TypeScript hech narsa bilmaydi. Type Assertion orqali bu qiymatlarni aniq tipda korsatib olish mumkin. 
+2.DOM elementlariga murojaat qilishda
+DOM elementlariga murojaat qilishda document.getElementById funksyasi DOM elementini qaytaradi, lekin TypeScript bu elementga HTMLElement | null deb qaraydi. 
+Type Assertion va Type Conversion farqi
+•	Type Assertion qiymatning tipini tahrirlash vaqtida TypeScriptga bildiradi va TypeScriptni bu qiymatni boshqa tipda ko’rishga majbur qiladi. Bu runtimega hech qanday o’zgarish qilmaydi.
+•	Type Conversion esa qiymatni boshqa turga konvertatsiya qilish jarayoni bo’lib, bu Java Scriptda haqiqiy qiymatning tipini o’zgartiradi. 
+Cheklovlar va ogohlantirishlar
+•	Agar notog’ri turda Type Assertion ishlatilsa, bu runtime davomida kutilmagan xatolarni olib kelishi mumkin
+•	Double Assertion: ikkita tur orasida qattiq o’zgartirish kerak bo’lganda ishlatiladi., lekin noto’g’ri foydalanilganda xatolarga sabab bo’lishi mumkin. Shuning uchun ehtiyotkorlik bilan foydalanish zarur
+Let soz= raqam as unknown as string
+Unknown type
+TypeScriptda unknown turi, variable type aniqlanmagan holatda ishlatiladi, lekin any typedan bir nechta farqlari bor. 
+•	Anyda type cheking o’chirilgan holatda unknown kam bo’lsa ham qoladi. 
+•	Unknown typeni qiymat qilib olishda nerrowing holatida ishlatamiz. ‘
+Type Inference-Type Script avtomatik ravishda o’zgaruvchi, parametr yoki funksiyaning qaytarish turini aniqlaydi. Masalan, let x=10; bu yerda x ning turi avtomatik ravishda number deb belgilangan. 
+Type Annotations- dasturchi o’zgaruvchilar, parametrlar yoki funksiyalarning qaytarish turini aniq belgilaydi. Masalan, let x:number =10 bu yerda x ninng turi number deb aniq ko’rsatilgan. 
+Any type- bu Type Scriptda o’zgaruvchilarga hohlagan typeni bera olish uchun ishlatiladi. Lekin bu typedan foydalanish tavsiya etilmaydi. Chunki type cheking va TypeScriptni qattiq type uchirib quyadi. Anyni agar serverda so’rov ketayotgan vaqtda agar undan qanday ma’lumot kelishini bilmagan holatda ishlatishimiz mumkin. 
+Union type sintaksisi
+Union type-(birlashma turlari) TypeScriptda o’zgaruvchiga bir nechta turdagi qiymtlar berish imkonini beradi. Bu orqali biror qiymat bir nechta turda bo’lishi mumkinligini bildirish mumkin. Union types bilan ishlash TypeScriptga ma’lum bir qiymatning bir nechta potensial turdagi qiymatlar qabul qilishini aytish uchun juda foydali. Agar variable bir yoki bir nechta qiymat qabul qilsa union tpedan foydalaniladi. Union type yozish uchun | (pipe) belgisi orqali tur birikmalarini yaratish mumkin. Masalan, string | number union type bo’lib, qiymat string yoki number turida bo’lishi mumkinligini bildiradi. 
+Union typeni qo’llanish holatlari
+•	Funksiya parametrlari uchun: Agar funksiya bir nechta turdagi parametrlarni qabul qilishi kerak bo’lsa, union types ishlatiladi
+•	Malumot turini aniq ko’rsatish kerak bo’lganda: Ma’lumot turi aniq bo’lmagan holatlarda qiymat bilan ishlashuchun union types yaxshi tanlov.
+•	Flexible(moslashuvchan)-biror qiymat turli xil turlarga mos kelishi mumkin bo’lganda. Masalan, string yoki number tipidagi id maydonida
+Literal Types turlari
+Varieblarda ma’lum bir qiymatni berish va uni tanlab olish mumkin bo’lgan qiymatlarni berish uchun ishlatiladi. Literal Typelar- TypeScriptda qiymatning ma’lum bir aniq qiymat bilan cheklanishiga imkon beradi. Bu turlar o’zgaruvchiga yoki funksiyaga qiymatning faqat to’plamdagi aniq qiymatlardan birini qabul qilishni talab qiladi. Literal turlar yordamida siz aniq qiymatlar bilan ishlashni ta’minlab, tur xavfsizligini kuchaytirishingiz yoki xatoliklardan saqlanish imkonini yaratishingiz mumkin. 
+•	String literal types: O’zgaruvchi faqat berilgan qator qiymatlarini qabul qilishi mumkin. 
+•	Number literal types: O’zgaruvchi faqat berilgan raqam qiymatlarini qabul qilishi mumkin. 
+•	Boolen literal types: true yoki false qiymatlari bilan cheklanishi mumkin.
+Type Alieases
+Type Scriptda biz o’zimiz ma’lum bir typelarga nom berib uni yarata olishimiz mumkin bo’ladi. Bu bizga qayta bir xil ishlatiladigan typelarni oldini olishda ishlatiladi. Type Aliases TypeScriptda ma’lum bir tur uchun muqobil nom berish imkonini beradi. Bu murakkab turlar yoki ko’p marta ishlatiladigan typelarni qayta-qayta yozmasdan, oson foydalanish uchun qulay qilib beradi. Type kalit so’zi orqali aliasesni yaratish mumkin. 
+Optional properties
+Optioanal holat biror bir type berayotgan vaqtda ma’lum bir typega qiymat berishimiz shart emasligini bildiradi. Optional Properties Type Aliases bilan ham xuddi interfeysda ishlatilgandek ishlaydi. Type aliasda obyektning ayrim xususisyatlarini ixtiyoriy qilish uchun belgi xususiyat nomi ortidan qo’yiladi. Bu usul ayniqsa murakkab turlar yoki ko’p marta ishlatiladigan strukturalar bilan ishlashda qulaylik yaratadi. 
+Optional Properties bilan Type Aliases sintaksisi
+Type Aliases yordamida obyekt turiga ? qo’shish orqali ixtiyoriy xususiyatlarni aniqlash mumkin. 
+Readonly-TypeScriptda readonly kalit so’zi o’zgaruvchining qiymatining faqat o’qilishi mumkin bo’lgan, ammo o’zgartirishga ruxsat berilmaganligi uchun ishlatiladi. Bu obyektning o’zgarishsiz turib qolishini ta’minlaydi. Readonly Type Alieases TypeScriptda xususiyatlarning qiymatini o’zgartirmaydigan qilib belgilash imkonini beradi. Bu yondashuvda readonly kalit so’zi xususiyatlar oldida qo’llaniladi va bu xususiyatlar faqat o’qish uchun bo’ladi. Type Aliases yordamida xususiyalarga oson va tushunarli tarzda anqilash mumkin. 
+Agar objectning typega optimal properties berilgan bo’lsa uning keylarini in operatori yordamida obj ichidan ma’lum bir key bor yoki yo’qligini aniqlaydi. 
+Type narrowing- turni tekshirish
